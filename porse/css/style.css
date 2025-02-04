@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+.menu span {
+    font-size: 20px;
+    cursor: pointer;
+}
+.logo h1 {
+    font-size: 24px;
+}
+.location p {
+    font-size: 14px;
+    color: #555;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+.models {
+    padding: 20px;
+    text-align: center;
+}
+.models h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.model-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.model-card {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    transition: transform 0.3s;
+}
+.model-card:hover {
+    transform: scale(1.05);
+}
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .model-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .image-placeholder {
+        height: 120px;
+    }
+}
+@media (max-width: 480px) {
+    .model-card {
+        flex: 1 1 100%;
+    }
+    .image-placeholder {
+        height: 100px;
+    }
+}
+.social {
+    padding: 20px;
+    text-align: center;
+    background: #f1f1f1;
+}
+.social h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    color: #555;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
