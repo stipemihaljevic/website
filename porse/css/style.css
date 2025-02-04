@@ -117,7 +117,7 @@ header {
 .price {
     display: block;
     font-size: 16px;
-    color: #007BFF;
+    color: #faaa06;
     margin-top: 5px;
 }
 
@@ -166,8 +166,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    color: #333;
+    background-color: #14171a;
+    color: #fff;
     font-size: 20px;
     border-radius: 50%;
     text-decoration: none;
