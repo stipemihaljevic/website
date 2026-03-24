@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bela - Pravi Stol (Multiplayer)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="authSekcija">
+        <h2>Bela Multiplayer</h2>
+        <input type="text" id="usernameInput" placeholder="Korisničko ime">
+        <input type="password" id="passwordInput" placeholder="Lozinka">
+        <br>
+        <button class="sys-btn btn-yellow" id="loginBtn">PRIJAVA</button>
+        <button class="sys-btn btn-yellow" id="registerBtn">REGISTRACIJA</button>
+        <p id="authPoruka" style="color: #e74c3c; margin-top: 15px;"></p>
+    </div>
+
+    <div id="lobbySekcija" style="display: none; text-align: center; margin-top: 100px;">
+        <h3>Dobrodošao, <span id="imePrijavljenog"></span>!</h3>
+        <div class="lobby-card">
+            <input type="text" id="sobaInput" placeholder="Ime sobe">
+            <div class="lobby-buttons">
+                <button class="sys-btn btn-yellow" id="kreirajSobuBtn">KREIRAJ SOBU</button>
+                <button class="sys-btn btn-blue" id="joinRoomBtn">PRIDRUŽI SE</button>
+            </div>
+        </div>
+        <br>
+        <button class="sys-btn btn-red" id="logoutBtn" style="margin-top: 30px;">ODJAVA</button>
+    </div>
+
+    <div id="pointsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Koliko poena za pobjedu?</h2>
+                <span class="close-btn" id="closeModalBtn">&times;</span>
+            </div>
+            <p style="color: #b0c4de;">Odaberi do koliko poena se igra ova partija.</p>
+            <div class="points-options">
+                <button class="point-btn" data-points="501">501</button>
+                <button class="point-btn" data-points="701">701</button>
+                <button class="point-btn" data-points="1001">1001</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cekaonicaSekcija" style="display: none; margin-top: 50px; width: 600px;">
+        <div class="waiting-header">
+            <span style="font-size: 0.9rem; font-style: italic;">Ime sobe</span>
+            <h2><span id="cekaonicaImeSobe"></span> (<span id="cekaonicaPoeni">?</span>)</h2>
+            <p style="color: #2ecc71;">🌐 Javna igra</p>
+        </div>
+        
+        <div class="player-slots">
+            <div class="slot" id="slot-0">čeka se...</div>
+            <div class="slot" id="slot-1">čeka se...</div>
+            <div class="vs-divider">vs</div>
+            <div class="slot" id="slot-2">čeka se...</div>
+            <div class="slot" id="slot-3">čeka se...</div>
+        </div>
+        
+        <div class="room-controls">
+            <div class="private-toggle">
+                <span>Privatna igra</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <button class="sys-btn btn-green" id="startIgraBtn" disabled>Pokreni igru ▷</button>
+            <p id="gostPoruka" style="text-align: center; margin-top: 10px; font-style: italic; display: none;">Čeka se domaćin...</p>
+        </div>
+    </div>
+
+    <div id="igraSekcija" style="display: none; flex-direction: column; align-items: center;">
+        <div id="info-panel">Igra kreće! Soba: <span id="imeSobePrikaz"></span></div>
+
+        <div id="game-wrapper">
+            <div id="game-table">
+                <div id="north"><div class="player-label" id="label-sjever"></div></div>
+                <div id="west"><div class="player-label" id="label-zapad"></div></div>
+                
+                <div id="center-pile">
+                    </div>
+                
+                <div id="east"><div class="player-label" id="label-istok"></div></div>
+                
+                <div id="south">
+                    <div id="my-hand"></div>
+                    <div class="player-label active-player" id="label-jug" style="margin-top: 25px;">Vi: <span id="prikazIgraca"></span></div>
+                </div>
+            </div>
+
+            <div id="scoreboard">
+                <div class="score-header"><span>MI</span><span>VI</span></div>
+                <div class="score-body" id="score-history"></div>
+                <div class="score-footer"><span id="total-mi">0</span><span id="total-vi">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
